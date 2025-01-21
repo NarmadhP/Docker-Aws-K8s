@@ -1,0 +1,69 @@
+Docker containers are designed to be isolated from each other
+    by default internal ports are not connected to any ports on host
+
+publishing a port
+
+    -p 
+
+    docker run -it -p 8888:80 image
+
+    -it 
+        -t means we add/attch a terminal 
+        -i is interactive
+
+containers only stay alive until main process is alive
+    we can run docker run -d -p 8080:80 image
+
+    -d is for detach mode
+
+container logs
+
+    docker container logs container_id
+
+docker container ls 
+    lists all container
+
+docker container ls -as 
+        lists with size as well
+         a represents all
+         s for size
+
+docker container stats 
+        shows stats
+
+docker container inspect container_id
+
+        describes container
+
+docker run --it --name name image 
+        for assigning name to a new container
+
+docker rename container_id/name new_name
+        for renaming the container
+
+docker container stop container_id
+    stopping the container
+
+    docker container start
+docker container ls -aq
+        shows only the container id 
+
+docker container rm $(docker container ls -aq )
+        this is for removing containets 
+
+docker run -it --rm ubuntu
+        it will create the container and exit when we exit from the session
+
+
+docker run -it --rm python bash
+        how thsi works is that bash session will be done first then we have do whatever we want
+        this creates a python container with bash installed session, inside we can download numpy as such
+
+                docker run -it nginx ls 
+                        here ls will be executed and then error will be thrown as ls doesnt have nginx
+
+docker exec -it container_name_or_id /bin/bash
+            exec is for Running a command in a running container
+        Let's say you have a running container named my-nginx-container and 
+            you want to check the contents of the /etc/nginx/ directory inside the container. You would use
+                    docker exec -it container_id bash 

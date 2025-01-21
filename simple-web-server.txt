@@ -4,4 +4,20 @@ docker run -it -p 8888:80 nginx
 
 ## -p denotes the port where the browser and host should connected
 ## without port, you cant access the web server on the browser
-# at https://localhost:8080/ or https://localhost:8888/
+# at http://localhost:8080/ or http://localhost:8888/
+
+## Running the process in the backgorung
+
+docker run -d -p 8080:80 nginx
+
+## -d denotes detached mode where the process will run in the background and the container stays alive
+## the containers are only alive till the main process is active
+
+
+## change default page of nginx
+    launch nginx container
+    navigate to /usr/share/nginx/html
+    edit index.html
+
+
+

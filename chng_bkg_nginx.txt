@@ -1,0 +1,9 @@
+## how to change backgrnd of a nginx welcome page 
+
+docker run -d -p 8888:80 nginx
+docker exec -it container_id bash
+    we are executing this to run bash commands on the container
+
+    then we have to goto /usr/share/nginx/html/index.html 
+    <body style="background-color: lightgray"
+    
