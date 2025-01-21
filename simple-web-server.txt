@@ -1,0 +1,7 @@
+## To launch a simple web server 
+
+docker run -it -p 8888:80 nginx
+
+## -p denotes the port where the browser and host should connected
+## without port, you cant access the web server on the browser
+# at https://localhost:8080/ or https://localhost:8888/
